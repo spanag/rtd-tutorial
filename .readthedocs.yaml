@@ -11,6 +11,7 @@ build:
   tools:
     python: "3.10"
   apt_packages:
+    - "build-essential"
     - xxd
     # Python3 with pip (thus wheel), and presumably python3-venv, are already installed.
     - libosmesa6 # for easier opengl renders
