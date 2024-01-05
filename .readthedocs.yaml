@@ -3,15 +3,23 @@
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for detail
 version: "2"
 
+# Requirements are based on build_env.Dockerfile
+
+# Set the OS, Python version and other tools you might need
 build:
   os: "ubuntu-22.04"
   tools:
     python: "3.10"
-
-# Set the OS, Python version and other tools you might need
-python:
-  install:
-    - requirements: docs/requirements.txt
+  apt_packages:
+    - build-essential
+    - flex>=2.6.4*
+    - bison>=2:3.3*
+    - xxd
+    # Python3 with pip (thus wheel), and presumably python3-venv, are already installed.
+  post_create_environment:
+    - pip install auditwheel patchelf
+  pre_install:
+    - echo "pre install, make it"
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
