@@ -35,3 +35,6 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+# These are just defined to avoid Sphinx warnings related to EPUB: (from nbsphinx repo)
+version = release
+suppress_warnings = ['epub.unknown_project_files']
