@@ -19,4 +19,5 @@ Contents
 .. toctree::
 
    usage
+   test pyrender <pyrender>
    api
