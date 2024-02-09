@@ -20,4 +20,5 @@ Contents
 
    usage
    test pyrender <pyrender>
+   gallery
    api
