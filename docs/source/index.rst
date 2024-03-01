@@ -20,5 +20,6 @@ Contents
 
    usage
    test pyrender <pyrender>
+   headless_k3d
    gallery
    api
