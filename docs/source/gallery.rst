@@ -10,4 +10,5 @@ Examples
     :name: rst-link-tutorials
 
     pyrender
+    headless_k3d
 
