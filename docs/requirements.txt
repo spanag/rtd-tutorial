@@ -16,7 +16,7 @@ numpy
 pandas
 matplotlib
 
-k3d
+k3d[dev,examples]
 ipyvolume
 
 trimesh
