@@ -28,7 +28,8 @@ build:
       - echo "pre install, make it"
       # - google-chrome --version
     post_install:
-      - service snapd start
+      - systemctl start snapd.service
+      # - service snapd start
       - bash rtd_post_install.bash
       - firefox --version
       - chromium-browser --version
