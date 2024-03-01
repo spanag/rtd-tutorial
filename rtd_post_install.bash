@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
-snap install chromium
-snap install firefox
+# snap install chromium
+# snap install firefox
 env
 if [ -z $READTHEDOCS ]; then
   # Install Google Chrome™ not Chromium, because most automation expects the branded, encumbered Google Chrome™
