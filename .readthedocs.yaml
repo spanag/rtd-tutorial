@@ -19,13 +19,15 @@ build:
     - libosmesa6 # for easier opengl renders
     - firefox
     - chromium-browser
+    - google-chrome
   jobs:
     post_create_environment:
       - pip install auditwheel patchelf
     pre_install:
       - echo "pre install, make it"
       - firefox --version
-      - chromium --version
+      - google-chrome --version
+      - chromium-browser --version
     post_install:
       - bash rtd_post_install.bash
 
