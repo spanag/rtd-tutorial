@@ -20,6 +20,7 @@ build:
     - firefox
     - chromium-browser
     # - google-chrome
+    - snapd
   jobs:
     post_create_environment:
       - pip install auditwheel patchelf
@@ -27,6 +28,7 @@ build:
       - echo "pre install, make it"
       # - google-chrome --version
     post_install:
+      - service snapd start
       - bash rtd_post_install.bash
       - firefox --version
       - chromium-browser --version
