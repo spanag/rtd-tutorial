@@ -7,7 +7,7 @@ version: "2"
 
 # Set the OS, Python version and other tools you might need
 build:
-  os: "ubuntu-22.04"
+  os: "ubuntu-20.04"
   tools:
     python: "3.10"
   apt_packages:
@@ -18,9 +18,9 @@ build:
     # Python3 with pip (thus wheel), and presumably python3-venv, are already installed.
     - libosmesa6 # for easier opengl renders
     - firefox
-    - chromium-browser
+    # - chromium-browser
     # - google-chrome
-    - snapd
+    # - snapd
   jobs:
     post_create_environment:
       - pip install auditwheel patchelf
@@ -28,11 +28,12 @@ build:
       - echo "pre install, make it"
       # - google-chrome --version
     post_install:
-      - systemctl start snapd.service
+      # Snap (which is the only way to install chromium in '20 and firefox+chromium after that) can't work under docker :c https://forums.docker.com/t/snap-in-dockerfile/136997/2
+      # - systemctl start snapd.service
       # - service snapd start
       - bash rtd_post_install.bash
       - firefox --version
-      - chromium-browser --version
+      # - chromium-browser --version
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
