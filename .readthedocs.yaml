@@ -26,6 +26,7 @@ build:
       - pip install auditwheel patchelf
     pre_install:
       - echo "pre install, make it"
+      - echo "$PATH"
       # - google-chrome --version
     post_install:
       # Snap (which is the only way to install chromium in '20 and firefox+chromium after that) can't work under docker :c https://forums.docker.com/t/snap-in-dockerfile/136997/2
